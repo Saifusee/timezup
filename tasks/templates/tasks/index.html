@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="{% static 'tasks/images/favicon.ico' %}">
+        {% block style %}
+            <link rel="stylesheet" href="{% static 'tasks/css/index.css' %}" type="text/css">
+        {% endblock style %}
+        <title>{{ app_name }}</title>
+    </head>
+    <body>
+        <div class="body_wrapper">
+            {% block body_title %}
+                <a href="{% url 'tasks:url-index-default' %}" class="title_a">
+                    <h1>{{ app_name }} &#x1F604;</h1>
+                </a>
+                <h2>{{ year }}</h2>
+            {% endblock body_title %}
+            {% block body %}
+            <div class='month_container'>
+                {% for month in months_data %}
+                    <a href="{% url 'tasks:url-month-data-by-name' year month %}">
+                        <div class='month_items'>{{ month|title }}</div>
+                    </a>
+                {% endfor %}
+                <a class='select' href="{% url 'tasks:url-select-year' %}">
+                    <div class='month_items year_select'> Select Year </div>
+                </a>
+            </div>
+            {% endblock body %}
+        </div>
+    </body>
+</html>

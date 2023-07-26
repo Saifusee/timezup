@@ -1,0 +1,21 @@
+{% extends 'tasks/index.html' %}
+{% load tasks_tag %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type='text/css' href="{% static 'tasks/css/month_dates.css' %}">
+{% endblock style %}
+
+{% block body_title %}
+    <a class='title_a' href="{% url 'tasks:url-index-year' year%}">
+        <h1> {{ month_name|title }}, {{ year }} </h1>
+    </a>
+{% endblock body_title %}
+
+{% block body %}
+    <div class='dates_container'>
+        {% for date in 1|range:end_date %}
+            <a href="{% url 'tasks:url-date-data' year month_name date %}"> <div class='dates'> {{ date }} </div> </a>
+        {% endfor %}
+    </div>
+{% endblock body %}

@@ -1,0 +1,36 @@
+@media only screen and (max-width: 600px) {
+
+    .dates_container {
+        grid-template-columns: auto auto auto auto;
+        gap: 7px;
+        color: white;
+        padding: 25px;
+    }
+
+    .dates {
+        font: 25px Arial, sans-serif;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    .dates_container {
+        grid-template-columns: auto auto;
+        gap: 7px;
+        color: white;
+        padding: 25px;
+    }
+
+    .dates {
+        font: 25px Arial, sans-serif;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+
+    .dates_container {
+        grid-template-columns: auto;
+    }
+}

@@ -1,0 +1,68 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+{% load tasks_tag %}
+    
+    {% block style %}
+        <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/dates.css' %}">
+    {% endblock style %}
+
+        {% block body_title %}
+            <h1 class="header">
+                <a href="{% url 'tasks:url-month-data-by-name' year month %}" class="title_a">
+                    <span class="centered_content">{{ month | title }} {{ date }}, {{ year }}</span>
+                </a>
+                <a id="add_image" href="{% url 'tasks:url-create-task' year month date %}">
+                    <img src="{% static 'tasks/images/add_button.png' %}" alt="Create New">
+                </a>
+            </h1>
+        {% endblock body_title %}
+
+        {% block body %}
+            <div class="page_container">
+                <div id='1' class='page' onclick='expandPage(event, "{{data}}")'>
+                    <div class='page_content'> 
+                        {{ data }}
+                    </div>
+                    <div class='page_no'> 1 </div>
+                    <div class="page_operation">
+                        <button class='btn edit_btn' onclick="editButton(event)">Edit</button>
+                        <button class='btn delete_btn' onclick='deleteButton(event)'>Delete</button>
+                    </div>
+                    <div class="page_date"> 2023-02-01 12:22:22 </div>
+                </div>
+                <div id='2' class='page' onclick='expandPage(event, "{{data}}")'>
+                    <div class='page_content'> 
+                        {{ data }}
+                    </div>
+                    <div class='page_no'> 2 </div>
+                    <div class="page_operation">
+                        <button class='btn edit_btn' onclick="editButton(event)">Edit</button>
+                        <button class='btn delete_btn' onclick='deleteButton(event)'>Delete</button>
+                    </div>
+                    <div class="page_date"> 2023-02-01 12:22:22 </div>
+                </div>
+                <div id='2' class='page' onclick='expandPage(event, "{{data}}")'>
+                    <div class='page_content'> 
+                        {{ data }}
+                    </div>
+                    <div class='page_no'> 2.5 </div>
+                    <div class="page_operation">
+                        <button class='btn edit_btn' onclick="editButton(event)">Edit</button>
+                        <button class='btn delete_btn' onclick='deleteButton(event)'>Delete</button>
+                    </div>
+                    <div class="page_date"> 2023-02-01 12:22:22 </div>
+                </div>
+                <div id='3' class='page' onclick='expandPage(event, "{{data}}")'>
+                    <div class='page_content'> 
+                        {{ data }}
+                    </div>
+                    <div class='page_no'> 3 </div>
+                    <div class="page_operation">
+                        <button class='btn edit_btn' onclick="editButton(event)">Edit</button>
+                        <button class='btn delete_btn' onclick='deleteButton(event)'>Delete</button>
+                    </div>
+                    <div class="page_date"> 2023-02-01 12:22:22 </div>
+                </div>
+            </div>
+            <script type='text/javascript' src="{% static 'tasks/js/dates.js' %}"></script>
+        {% endblock body %}

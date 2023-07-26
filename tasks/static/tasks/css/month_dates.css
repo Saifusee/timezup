@@ -1,0 +1,83 @@
+body {
+    background: black;
+    user-select: none;
+}
+
+.dates_container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 15px;
+    color: white;
+    padding: 50px;
+    
+}
+
+.dates {
+    font: 40px Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.title_a {
+    text-decoration: none;
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+    background-color: #70dbdb;
+    border-radius: 45px;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .dates_container {
+        grid-template-columns: auto auto auto auto;
+        gap: 7px;
+        color: white;
+        padding: 25px;
+    }
+
+    .dates {
+        font: 25px Arial, sans-serif;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+
+    .dates_container {
+        grid-template-columns: auto auto auto;
+        gap: 7px;
+        color: white;
+        padding: 25px;
+    }
+
+    .dates {
+        font: 25px Arial, sans-serif;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+
+    .dates_container {
+        grid-template-columns: auto auto;
+    }
+}

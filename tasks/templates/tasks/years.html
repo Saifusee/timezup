@@ -1,0 +1,18 @@
+{% extends 'tasks/index.html' %}
+{% load tasks_tag %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type='text/css' href="{% static 'tasks/css/month_dates.css' %}">
+    <link rel="stylesheet" type='text/css' href="{% static 'tasks/css/years.css' %}">
+{% endblock style %}
+
+{% block body %}
+    <div class='dates_container'>
+        {% with current_year|add:10 as current_year_plus_10  %}
+            {% for year in current_year|add:-10|range:current_year_plus_10 %}
+                <a href="{% url 'tasks:url-index-year' year %}"> <div class='dates'> {{ year }} </div> </a>
+            {% endfor %}
+        {% endwith %}
+    </div>
+{% endblock body %}

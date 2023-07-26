@@ -1,0 +1,29 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/form.css' %}">
+{% endblock style %}
+
+{% block body_title %}
+    <div class="head">
+        <a href="{% url 'tasks:url-date-data' year month date %}">
+            <h1>{{ app_name }} &#x1F604;</h1> 
+        </a>
+        <h2> {{ title }} - {{ month |title }} {{ date }}, {{ year }} </h2>
+    </div>
+{% endblock body_title %}
+
+{% block body %}
+<div class="form">
+    <form>
+        {% csrf_token %}
+        <label class='lbl' for="task">Enter Task: </label>
+        <textarea class='txtinpt' name="task" id="task" cols="30" rows="10" required></textarea>
+        <input type="submit" class='btn' name='submit_button'>
+    </form>
+</div>
+<div class="message">
+    {{ message }}
+</div>
+{% endblock body %}

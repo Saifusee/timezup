@@ -1,0 +1,139 @@
+body {
+    background: black;
+    padding: 30px 200px 30px 200px;
+    user-select: none;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    padding: 0px;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    padding: 0px;
+    margin: 5px;
+}
+
+.body_wrapper {
+    background: #70dbdb;
+    padding: 10px;
+    border-radius: 40px;
+
+}
+
+.month_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+    color: white;
+    padding: 50px;
+}
+
+.month_items {
+    font: 40px Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+    background-color: #ffff66;
+    border-radius: 25px;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+}
+
+.title_a {
+text-decoration: none;
+color: black;
+}
+
+.title_a:hover {
+    color: black;
+}
+
+.select:link {
+    grid-column: span 2;
+    background-color: #ff4d4d;
+    color: black;
+}
+
+.select:hover {
+    background-color: #ff9999;
+}
+
+.select:visited {
+    background-color: #ff9999;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    body {
+        padding: 80px 80px 0px 80px;
+    }    
+
+    .month_container {
+        grid-template-columns: auto auto;
+        padding: 10px;
+    }
+
+    .month_items {
+        font: 25px Arial, sans-serif;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {  
+    .month_container {
+        grid-template-columns: auto;
+        padding: 10px;
+    }
+
+    .select:link {
+        grid-column: span 1;
+    }
+}
+
+@media only screen and (max-width: 350px) {  
+    .month_container {
+        grid-template-columns: auto;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 250px) {  
+    .month_container {
+        grid-template-columns: auto;
+        padding: 0px;
+    }
+
+    .month_items {
+        font: 15px Arial, sans-serif;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .body_wrapper {
+        background: black;
+    }
+
+    h1 {
+        color: white;
+    }
+}

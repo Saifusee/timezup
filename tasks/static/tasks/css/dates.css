@@ -1,0 +1,156 @@
+body {
+    background: black;
+    color: white;
+    user-select: none;
+}
+
+.body_wrapper {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.centered_content {
+    text-align: center;
+    font-size: 50px;
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    margin-right: 25px;
+}
+
+.page_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px
+}
+
+.page {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 5px;
+    gap: 0px;
+    min-height: 80px;
+    max-height: 150px;
+    border-radius: 25px;
+    position: relative;
+}
+
+.page_no {
+    background-color: #b3ffb3;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 50px; /* Make the div circular */
+    font-size: 20px;
+    text-align: center;
+    display: flex; /* Align content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    width: 0px; /* Set the width and height to ensure a circle shape */
+    height: 0px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.page_content {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 30px;
+    margin: 10px;
+    text-align: left;
+    height: fit-content;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    width: 90%;
+    word-wrap: break-word;
+}
+
+.page_operation {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+.page_date {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.btn {
+    margin: 10px;
+    padding: 5px;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 30px;
+    width: 60px;
+}
+
+.edit_btn {
+    background-color: #4dd2ff;
+}
+
+.delete_btn {
+    background-color: #ff8080;
+}
+
+.btn:active {
+    background-color: black;
+    color: white;
+}
+
+.title_a {
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    .centered_content {
+        font-size: 35px;
+    }
+
+    .page_container {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .page_date {
+        font-size: 20px;
+    }
+
+    .btn {
+        margin: 5px;
+        padding: 5px;
+        height: 40px;
+        width: 80px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .page_content {
+        font-size: 25px;  
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .page_content {
+        font-size: 15px; 
+        max-width: 95vw;
+        width: fit-content;
+    }
+}
