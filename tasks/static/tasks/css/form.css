@@ -67,6 +67,14 @@ a:link {
     color: white;
 }
 
+a:visited {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
 
 @media only screen and (max-width: 450px) {
     

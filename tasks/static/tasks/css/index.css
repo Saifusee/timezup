@@ -72,13 +72,15 @@ color: black;
     color: black;
 }
 
-.select:hover {
-    background-color: #ff9999;
+.select:visited {
+    background-color: #ff4d4d;
 }
 
-.select:visited {
+.select:hover {
     background-color: #ff9999;
+    color: black;
 }
+
 
 
 

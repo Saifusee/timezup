@@ -14,8 +14,10 @@
 
 {% block body %}
     <div class='dates_container'>
-        {% for date in 1|range:end_date %}
-            <a href="{% url 'tasks:url-date-data' year month_name date %}"> <div class='dates'> {{ date }} </div> </a>
-        {% endfor %}
+        {% with end_date|add:1 as end %}
+            {% for date in 1|range:end %}
+                <a href="{% url 'tasks:url-date-data' year month_name date %}"> <div class='dates'> {{ date }} </div> </a>
+            {% endfor %}
+        {% endwith %}
     </div>
 {% endblock body %}

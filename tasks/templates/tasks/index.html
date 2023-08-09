@@ -21,8 +21,8 @@
             {% block body %}
             <div class='month_container'>
                 {% for month in months_data %}
-                    <a href="{% url 'tasks:url-month-data-by-name' year month %}">
-                        <div class='month_items'>{{ month|title }}</div>
+                    <a href="{% url 'tasks:url-month-data' year month.data %}">
+                        <div class='month_items'>{{ month.data|title }}</div>
                     </a>
                 {% endfor %}
                 <a class='select' href="{% url 'tasks:url-select-year' %}">

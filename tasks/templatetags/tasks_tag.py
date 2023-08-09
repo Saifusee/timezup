@@ -23,7 +23,13 @@ def iseven(value):
         return False
 
 
-# Naming filter to 'iseven' and adding its functionalities
+# Naming filter to 'length' and adding its functionalities
 @register.filter(name='length')
 def length_of_iterable(value):
     return len(value)
+
+
+# Similar functionality as enumerate()
+@register.filter(name="enumerate")
+def enumerateAlternative(collection, st):
+    return enumerate(collection, start=st)
