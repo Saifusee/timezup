@@ -85,9 +85,10 @@
         "pk": 1,
         "fields": {
             "task": "To buy a new playstation with my saved money.",
-            "date": 1,
+            "combine_date": 1,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649400"
         }
     },
     {
@@ -95,9 +96,10 @@
         "pk": 2,
         "fields": {
             "task": "Watch barbie with my gf and enjoy themove with popcorn.",
-            "date": 1,
+            "combine_date": 1,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649411"
         }
     },
     {
@@ -105,9 +107,10 @@
         "pk": 3,
         "fields": {
             "task": "Complete watching game of thrones from season 1 to seson 8.",
-            "date": 2,
+            "combine_date": 2,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649422"
         }
     },
     {
@@ -115,9 +118,10 @@
         "pk": 4,
         "fields": {
             "task": "Let play a new game and discover it from scratch so that no one can know how to face it.",
-            "date": 2,
+            "combine_date": 2,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649433"
         }
     },
     {
@@ -125,9 +129,10 @@
         "pk": 5,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 5.",
-            "date": 3,
+            "combine_date": 3,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649444"
         }
     },
     {
@@ -135,9 +140,10 @@
         "pk": 6,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 6",
-            "date": 3,
+            "combine_date": 3,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649455"
         }
     },
     {
@@ -145,9 +151,10 @@
         "pk": 7,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 7",
-            "date": 4,
+            "combine_date": 4,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649466"
         }
     },
     {
@@ -155,9 +162,10 @@
         "pk": 8,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 8",
-            "date": 4,
+            "combine_date": 4,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649477"
         }
     },
     {
@@ -165,9 +173,10 @@
         "pk": 9,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 9",
-            "date": 5,
+            "combine_date": 5,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649488"
         }
     },
     {
@@ -175,9 +184,10 @@
         "pk": 10,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 10",
-            "date": 5,
+            "combine_date": 5,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc22649499"
         }
     },
     {
@@ -185,9 +195,10 @@
         "pk": 11,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 11",
-            "date": 6,
+            "combine_date": 6,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264940000"
         }
     },
     {
@@ -195,9 +206,10 @@
         "pk": 12,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 12",
-            "date": 6,
+            "combine_date": 6,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264941111"
         }
     },
     {
@@ -205,9 +217,10 @@
         "pk": 13,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 13",
-            "date": 7,
+            "combine_date": 7,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264942222"
         }
     },
     {
@@ -215,9 +228,10 @@
         "pk": 14,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 14",
-            "date": 7,
+            "combine_date": 7,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264943333"
         }
     },
     {
@@ -225,9 +239,10 @@
         "pk": 15,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 15",
-            "date": 8,
+            "combine_date": 8,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264944444"
         }
     },
     {
@@ -235,9 +250,10 @@
         "pk": 16,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 16",
-            "date": 8,
+            "combine_date": 8,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264945555"
         }
     },
     {
@@ -245,9 +261,10 @@
         "pk": 17,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 17",
-            "date": 4,
+            "combine_date": 4,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264946666"
         }
     },
     {
@@ -255,9 +272,10 @@
         "pk": 18,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 18",
-            "date": 1,
+            "combine_date": 1,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264947777"
         }
     },
     {
@@ -265,9 +283,10 @@
         "pk": 19,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 19",
-            "date": 2,
+            "combine_date": 2,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264948888"
         }
     },
     {
@@ -275,9 +294,10 @@
         "pk": 20,
         "fields": {
             "task": " Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task Task 20",
-            "date": 3,
+            "combine_date": 3,
             "modified_at": "2023-08-07 15:30:00+00:00",
-            "created_at": "2023-08-07 15:30:00+00:00"
+            "created_at": "2023-08-07 15:30:00+00:00",
+            "slug": "58869d70ee189f53de6ef3e5bc2264949999"
         }
     }
 ]

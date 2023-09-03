@@ -1,0 +1,52 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'tasks/authenticate/css/auth.css' %}">
+{% endblock style %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile %}
+{% endblock profile %}
+
+{% block body %}
+    <form class="form" method="POST" action="{% url "tasks:url-login" %}">
+        {% csrf_token %}
+        <h2>Login</h2>
+        {{ form.username_or_email }}
+
+        <div class="password-input">
+            {{ form.password }}
+            <button toggle="#id_password" class="eye-toggle" type="button">
+                <img id="open_eye" src="{% static 'tasks/authenticate/images/open_eye.png' %}" alt="Show">
+                <img id="close_eye" src="{% static 'tasks/authenticate/images/close_eye.png' %}" alt="Hide">
+            </button>
+          </div>
+        <button type="submit">Login</button>
+    </form>
+
+    {% if form.errors %}
+        <ul>
+            {% for field_error_dict in form.errors.values %}
+                {% for error_data in field_error_dict %}
+                    <li class="{% if error %}error{% else %}success{% endif %}">{{ error_data }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <div class="links">
+        <a href="{% url 'tasks:url-register' %}">
+            <button class="links_button">Create Account</button>
+        </a>
+        <a href="{% url 'tasks:url-forgot-password-request' %}">
+            <button  class="links_button">Forgot Password?</button>
+        </a>
+    </div>
+
+    <script type="text/javascript" src="{% static 'tasks/authenticate/js/auth.js' %}"></script>
+{% endblock body %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile_scripts %}
+{% endblock profile_scripts %}

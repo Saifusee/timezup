@@ -1,4 +1,4 @@
-
+// Setting content of page upto certain limit for better display
 function setContentLength(){
     contentElementList = document.getElementsByClassName('page_content');
     for(let content of contentElementList){
@@ -16,21 +16,34 @@ function setContentLength(){
         page_element.style.height =  (content.offsetHeight + add_on) + 'px';
     }
 }
-
 window.addEventListener('load', setContentLength)
 
+
+// Event handler when edit button is clicked
 function editButton(event){
     event.stopPropagation();
-    console.log('Edit Button Pressed');
+    let permission = window.confirm("Do you want to modify this task?")
+    if(permission){
+        let edit_page_url = event.target.parentNode.dataset.codeEdit;
+        window.location.href = edit_page_url
+    }
+
 }
 
 
+// Event handler when delete button is clicked
 function deleteButton(event){
     event.stopPropagation();
-    console.log('Edit Button Pressed');
+    let permission = confirm("Are you sure to delete this task?")
+    if(permission){
+        let delete_url = event.target.parentNode.dataset.codeDelete;
+        window.location.href = delete_url
+
+    }
 }
 
 
+// expand a page div of task based on different media screens
 function expandPage(event, original_data){
     const mediaQuery400 = window.matchMedia('(max-width: 400px)'); // Ensuring screen size
     const mediaQuery800 = window.matchMedia('(max-width: 800px)'); // Ensuring screen size

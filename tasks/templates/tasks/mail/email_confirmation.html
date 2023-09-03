@@ -1,0 +1,72 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+
+{% block style %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .body_wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0088cc;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .button_a {
+            background-color: #0088cc; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: white; 
+        }
+    </style>
+{% endblock style %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile %}
+{% endblock profile %}
+
+{% block body_title %}
+    <div class="header">
+        <h1>{{ app_name }} - Email Verification</h1>
+    </div>
+{% endblock body_title %}
+
+{% block body %}
+    <div class="content">
+        <p>Hello {{ username }},</p>
+        <p>{{ email_label_message }}</p>
+        <a href="{{ domain }}{% url url_name token=hashed_param uidb64=hashed_id %}"><button class="button_a">Verify Email</button></a>
+    </div>
+    <div class="footer">
+        <p>If you didn't request this email, please ignore it.</p>
+    </div>
+{% endblock body %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile_scripts %}
+{% endblock profile_scripts %}
+

@@ -1,0 +1,23 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'tasks/authenticate/css/verification_successful.css' %}">
+{% endblock style %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile %}
+{% endblock profile %}
+
+{% block body_title %}
+    <h1>{{ app_name }}</h1>
+    <h3 class="{% if fail %}error{% else %}success{% endif %}">{{ label_message }}</h3>
+{% endblock body_title %}
+
+{% block body %}    
+    <a href="{{ button_url }}"><button>{{ button_message }}</button></a>
+{% endblock body %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile_scripts %}
+{% endblock profile_scripts %}

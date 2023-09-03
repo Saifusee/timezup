@@ -1,0 +1,23 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/error.css' %}">
+{% endblock style %}
+
+{% block body_title %}
+{% endblock body_title %}
+
+{% block body %}
+    <div class="error-container">
+        <div class="error-code">
+            <a href="{% url 'tasks:url-index-default' %}">
+                <h1>{{ app_name }} &#x1F604;</h1> 
+            </a>
+        </div>
+        <div class="error-code"><img src="{% static 'tasks/images/error.avif' %}" width="175" height="200"></div>
+        <div class="error-message">Oops! Something went wrong.</div>
+        <p>Sorry, the page you are looking for might have been removed or is temporarily unavailable.</p>
+        <a class="back-home" href="{% url 'tasks:url-index-default' %}">Back to Home</a>
+    </div>
+{% endblock body %}

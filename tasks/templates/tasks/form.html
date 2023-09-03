@@ -7,23 +7,33 @@
 
 {% block body_title %}
     <div class="head">
-        <a href="{% url 'tasks:url-date-data' year month date %}">
+        <a href="{% url 'tasks:url-index-default' %}">
             <h1>{{ app_name }} &#x1F604;</h1> 
         </a>
-        <h2> {{ title }} - {{ month |title }} {{ date }}, {{ year }} </h2>
+        <h2> 
+            {{ title }} - 
+            <a href="{% url 'tasks:url-date-data' year month date %}"> 
+                {{ month|title }} {{ date }}, {{ year }} 
+            </a> 
+        </h2>
     </div>
 {% endblock body_title %}
 
 {% block body %}
 <div class="form">
-    <form>
+    <form method="POST" action="{{ submit_url }}">
         {% csrf_token %}
-        <label class='lbl' for="task">Enter Task: </label>
-        <textarea class='txtinpt' name="task" id="task" cols="30" rows="10" required></textarea>
+        <label for="{{ form.task.id_for_label }}" class="lbl">{{ form.task.label }}:</label>
+
+        {{ form.task }}
         <input type="submit" class='btn' name='submit_button'>
     </form>
 </div>
-<div class="message">
-    {{ message }}
-</div>
+{% if show_message %}
+    <div class="message{% if is_error %} error {% endif %}">
+        {% for element in messages %}
+            <li> {{ element }} </li>
+        {% endfor %}
+    </div>
+{% endif %}
 {% endblock body %}

@@ -12,6 +12,15 @@
     </head>
     <body>
         <div class="body_wrapper">
+            {% block profile %}
+                <div class="profile">
+                    <p class="profile_username">mohammadsaifulkhan9829@gmail.com</p>
+                    <form method="POST" action="{% url 'tasks:url-logout' %}">
+                        {% csrf_token %}
+                        <button id="profile_logout" type="button">Logout</button>
+                    </form>
+                </div>
+            {% endblock profile %}
             {% block body_title %}
                 <a href="{% url 'tasks:url-index-default' %}" class="title_a">
                     <h1>{{ app_name }} &#x1F604;</h1>
@@ -31,5 +40,9 @@
             </div>
             {% endblock body %}
         </div>
+
+        {% block profile_scripts %}
+            <script src="{% static 'tasks/js/logout.js' %}" type="text/javascript"></script>
+        {% endblock profile_scripts %}
     </body>
 </html>

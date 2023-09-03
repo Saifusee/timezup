@@ -21,14 +21,20 @@
             <div class="page_container">
                 {% if  tasks|length > 0 %}
                     {% for counter, task in tasks|enumerate:1 %}
-                        <div id="{{ counter }}" class='page' onclick='expandPage(event, "{{ task }}")'>
+                        <div id="{{ counter }}" class='page' onclick="expandPage(event, '{{ task.task }}')">
                             <div class='page_content'> 
                                 {{ task.task }}
                             </div>
                             <div class='page_no'> {{ counter }} </div>
-                            <div class="page_operation">
-                                <button class='btn edit_btn' onclick="editButton(event)">Edit</button>
-                                <button class='btn delete_btn' onclick='deleteButton(event)'>Delete</button>
+                            <div class="page_operation" 
+                                data-code-edit="{% url 'tasks:url-edit-task' slug=task.slug %}" 
+                                data-code-delete="{% url 'tasks:url-delete-task' slug=task.slug %}">
+                                <button class='btn edit_btn' onclick="editButton(event)">
+                                    Edit
+                                </button>
+                                <button class='btn delete_btn' onclick="deleteButton(event)">
+                                    Delete
+                                </button>
                             </div>
                             <div class="page_date"> {{ task.created_at|date:"M d, Y - h:i A" }} </div>
                         </div>
