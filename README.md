@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="tasks/static/images/favicon.png" alt="Timezup Logo" width="200">
+  <img src="tasks/static/tasks/images/favicon.png" alt="Timezup Logo" width="200">
 </p>
 
 # Timezup - Your Time Management Companion
