@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'tasks',
+    'django_apscheduler',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,10 +133,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PROJECT_APPLICATION_NAME = 'Timez Up'
+PROJECT_APPLICATION_NAME = config("PROJECT_APPLICATION_NAME")
 
 AUTH_USER_MODEL  = "tasks.CustomUser"
 
+SESSION_COOKIE_AGE = 86400 # Session expiry time in seconds
 
 # Email settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

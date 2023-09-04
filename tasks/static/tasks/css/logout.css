@@ -1,0 +1,30 @@
+body .profile {
+    text-align: left;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+}
+
+.profile_username {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 0px 5px 10px;
+}
+
+#profile_logout {
+    background-color: #ff9999;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.show_button {
+    border-radius: 10px;
+    background-color: #98e698;
+    padding: 10px;
+}
+
+.logout_form {
+    padding: 5px;
+    margin: 5px;
+}

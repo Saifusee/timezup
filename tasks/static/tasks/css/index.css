@@ -82,21 +82,6 @@ color: black;
 }
 
 
-.profile_username {
-    font-size: 20px;
-    font-weight: 700;
-    color: black;
-    word-wrap: normal;    
-}
-
-#profile_logout {
-    background-color: #ff9999;
-    border-radius: 10px;
-    font-size: 12px;
-    padding: 5px;
-}
-
-
 @media only screen and (max-width: 1000px) {
 
     body {
@@ -114,7 +99,7 @@ color: black;
     }
 }
 
-@media only screen and (max-width: 450px) {  
+@media only screen and (max-width: 525px) {  
     .month_container {
         grid-template-columns: auto;
         padding: 10px;
@@ -126,43 +111,36 @@ color: black;
 }
 
 @media only screen and (max-width: 350px) {  
+    body {
+        background: black;
+        padding: 30px 0px 30px 0px;
+        user-select: none;
+    }
+
     .month_container {
         grid-template-columns: auto;
         padding: 10px;
-    }
-
-    .profile_username {
-        font-size: 20px;
-        font-weight: 700;
-        color: black;
-        word-wrap: normal;    
-    }
-    
-    #profile_logout {
-        background-color: #ff9999;
-        border-radius: 10px;
-        font-size: 12px;
-        padding: 5px;
-    }
-}
-
-@media only screen and (max-width: 250px) {  
-    .month_container {
-        grid-template-columns: auto;
-        padding: 0px;
-    }
-
-    .month_items {
-        font: 15px Arial, sans-serif;
-        padding: 0px;
-        text-align: center;
     }
 
     .body_wrapper {
         background: black;
     }
 
-    h1 {
+    body .title_a {
         color: white;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 250px) {  
+    .month_container {
+        grid-template-columns: auto;
+        padding: 5px;
+    }
+
+    .month_items {
+        font: 15px Arial, sans-serif;
+        padding: 0px;
+        text-align: center;
     }
 }

@@ -35,7 +35,8 @@ def viewIndex(request, year=None):
     context = {
         'year': year,
         'months_data': months_data,
-        'app_name': settings.PROJECT_APPLICATION_NAME
+        'app_name': settings.PROJECT_APPLICATION_NAME,
+        'username': request.user.username
     }
     return render(request, 'tasks/index.html', context)
 
@@ -45,7 +46,8 @@ def viewSelectYear(request):
     current_year = int(datetime.datetime.now().strftime('%Y'))
     context = {
         'current_year': current_year,
-        'app_name': settings.PROJECT_APPLICATION_NAME
+        'app_name': settings.PROJECT_APPLICATION_NAME,
+        'username': request.user.username
     }
     return render(request, 'tasks/years.html', context)
 
@@ -61,7 +63,8 @@ def viewShowMonthDates(request, year, month):
         'app_name': settings.PROJECT_APPLICATION_NAME,
         'year': year,
         'month_name': month["name"],
-        'end_date': end
+        'end_date': end,
+        'username': request.user.username
     }
     return render(request, 'tasks/month_dates.html', context)
 
@@ -78,13 +81,14 @@ def viewShowDateData(request, year, month, date):
 
     # since get_or_create return (object, created)
     combine_date, _ = CombineDate.objects.get_or_create(year=year_inst, month=month_inst, date=date_inst)
-    tasks = Task.objects.filter(combine_date=combine_date)
+    tasks = Task.objects.filter(combine_date=combine_date, user=request.user)
     context = {
         'app_name': settings.PROJECT_APPLICATION_NAME,
         'year': year,
         'month': month["name"],
         'date': date,
         'tasks': tasks,
+        'username': request.user.username
     }
 
     return render(request, 'tasks/dates.html', context)
@@ -115,6 +119,7 @@ class ViewCreateTask(CreateView):
         context["month"] = self.kwargs["month"]
         context["year"] = self.kwargs["year"]
         context["app_name"] = settings.PROJECT_APPLICATION_NAME
+        context["username"] = self.request.user.username
         context["title"] = "Create Task"
         context["messages"] = self.success_mssg_
         context["show_message"] = False
@@ -124,6 +129,15 @@ class ViewCreateTask(CreateView):
             "month": self.kwargs["month"],
             "year": self.kwargs["year"]
             })
+        month_no = int(validateMonth(self.kwargs["month"])["number"])
+        requested_date = datetime.datetime(int(context["year"]), month_no, int(context["date"])).date()
+        current_date = datetime.datetime.now().date()
+        print(requested_date)
+        print(current_date)
+        if requested_date < current_date:
+            context["form_not_accepted"] = True
+        else:
+            context["form_not_accepted"] = False
         return context
     
     # This method called when a valid form is submitted
@@ -136,7 +150,8 @@ class ViewCreateTask(CreateView):
             # get_or_create return tuple (object, boolean), boolean tell either new obj craeted or not
             combine_date, _ = CombineDate.objects.get_or_create(date=date, month=month, year=year)
 
-            new_task = Task(task=form.cleaned_data["task"], combine_date=combine_date)
+            new_task = Task(task=form.cleaned_data["task"], combine_date=combine_date, 
+                user=self.request.user)
             new_task.save()
             context["show_message"] = True # Show message
             context["is_error"] = False # There are no errors
@@ -179,6 +194,7 @@ class ViewEditTask(UpdateView):
         context["month"] = combined_date.month.data
         context["year"] = combined_date.year.data
         context["app_name"] = settings.PROJECT_APPLICATION_NAME
+        context["username"] = self.request.user.username
         context["title"] = "Edit Task"
         context["messages"] = self.success_mssg_
         context["show_message"] = False
@@ -186,6 +202,13 @@ class ViewEditTask(UpdateView):
         context["submit_url"] = reverse_lazy("tasks:url-edit-task", kwargs={
             "slug": self.kwargs["slug"]
         })
+        month_no = int(validateMonth(context["month"])["number"])
+        requested_date = datetime.datetime(int(context["year"]), month_no, int(context["date"])).date()
+        current_date = datetime.datetime.now().date()
+        if requested_date < current_date:
+            context["form_not_accepted"] = True
+        else:
+            context["form_not_accepted"] = False
         return context
     
     # This method called when a valid form is submitted

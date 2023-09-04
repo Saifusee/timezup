@@ -1,0 +1,72 @@
+{% extends 'tasks/index.html' %}
+{% load static %}
+
+{% block style %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    h1, h2, h4, h5 {
+        text-align: center;
+        color: #333;
+    }
+
+    ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+</style>
+{% endblock style %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile %}
+{% endblock profile %}
+
+{% block profile_style %}
+{% endblock profile_style %}
+
+{% block body_title %}
+    <h1>{{ app_name }}</h1>
+{% endblock body_title %}
+
+{% block body %}
+<div class="container">
+    <h2>{{ subject_greet }} {{ username }} - Here's your today's Time Table</h2>
+
+    {% if tasks|length == 0 %}
+    <h4> Seems you have no tasks set up for today, login quickly and set your today's time table.</h4>
+    {% else %}
+        <ol>
+            {% for task in tasks %}        
+                <li>
+                    <p>{{ task.task }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    <h4>{{ small_message }}</h4>
+</div>
+{% endblock body %}
+
+{% comment %} Because we don't want profile section in public pages {% endcomment %}
+{% block profile_script %}
+{% endblock profile_script %}

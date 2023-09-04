@@ -21,13 +21,17 @@
 
 {% block body %}
 <div class="form">
-    <form method="POST" action="{{ submit_url }}">
-        {% csrf_token %}
-        <label for="{{ form.task.id_for_label }}" class="lbl">{{ form.task.label }}:</label>
+    {% if form_not_accepted %}
+        <h3 style="color:yellow;">Warning: Adding or modifying tasks of past is not supported. </h3>
+    {% else %}
+        <form method="POST" action="{{ submit_url }}">
+            {% csrf_token %}
+            <label for="{{ form.task.id_for_label }}" class="lbl">{{ form.task.label }}:</label>
 
-        {{ form.task }}
-        <input type="submit" class='btn' name='submit_button'>
-    </form>
+            {{ form.task }}
+            <input type="submit" class='btn' name='submit_button'>
+        </form>
+    {% endif %}
 </div>
 {% if show_message %}
     <div class="message{% if is_error %} error {% endif %}">

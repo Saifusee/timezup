@@ -1,6 +1,8 @@
 from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
 
+
+# Send verification mail to user
 class TaskMail:
     def __init__(self, subject, to, from_email=None, 
         body =None, is_html=False, html_message=None, **kwargs):

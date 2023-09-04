@@ -8,19 +8,25 @@
         {% block style %}
             <link rel="stylesheet" href="{% static 'tasks/css/index.css' %}" type="text/css">
         {% endblock style %}
+        {% block profile_style %}
+            <link rel="stylesheet" href="{% static 'tasks/css/logout.css' %}" type="text/css">
+        {% endblock profile_style %}
         <title>{{ app_name }}</title>
     </head>
     <body>
-        <div class="body_wrapper">
-            {% block profile %}
-                <div class="profile">
-                    <p class="profile_username">mohammadsaifulkhan9829@gmail.com</p>
-                    <form method="POST" action="{% url 'tasks:url-logout' %}">
+        {% block profile %}
+            <div class="profile">
+                <button class="show_button" type="button">Show Profile</button>
+                <span class="profile_content" style="display:none;">
+                    <p class="profile_username">{{ username }}</p>
+                    <form class="logout_form" method="POST" action="{% url 'tasks:url-logout' %}">
                         {% csrf_token %}
                         <button id="profile_logout" type="button">Logout</button>
                     </form>
-                </div>
-            {% endblock profile %}
+                </span>
+            </div>
+        {% endblock profile %}
+        <div class="body_wrapper">
             {% block body_title %}
                 <a href="{% url 'tasks:url-index-default' %}" class="title_a">
                     <h1>{{ app_name }} &#x1F604;</h1>
@@ -41,8 +47,8 @@
             {% endblock body %}
         </div>
 
-        {% block profile_scripts %}
+        {% block profile_script %}
             <script src="{% static 'tasks/js/logout.js' %}" type="text/javascript"></script>
-        {% endblock profile_scripts %}
+        {% endblock profile_script %}
     </body>
 </html>

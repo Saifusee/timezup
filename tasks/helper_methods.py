@@ -167,6 +167,6 @@ to verify your email address and follow further instructioins"
     # Sending email confirmation link
     mail_thread = threading.Thread(target=TaskMail, 
         kwargs={"subject": f"{settings.PROJECT_APPLICATION_NAME} - Email Verification",
-        "from_email": f"{settings.PROJECT_APPLICATION_NAME}",
+        "from_email": f"{settings.PROJECT_APPLICATION_NAME} <noreply@gmail.com>",
         "to": (user.email,), "is_html": True, "html_message": message_html_format})
     mail_thread.start()

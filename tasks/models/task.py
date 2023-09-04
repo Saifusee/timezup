@@ -3,12 +3,15 @@ from tasks.models.combine_date import CombineDate
 from datetime import datetime
 import hashlib
 from django.utils.text import slugify
+from django.contrib.auth import get_user_model
 
 
 class Task(models.Model):
     task = models.TextField(max_length=500)
     combine_date = models.ForeignKey(CombineDate, on_delete=models.PROTECT, null=False)
     slug = models.SlugField(max_length=50, null=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.PROTECT, 
+        related_name="task_set", related_query_name="tasks")
     modified_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -25,9 +28,6 @@ class Task(models.Model):
 
 
     class Meta:
-        indexes = [
-            models.Index(fields=["slug"])
-        ]
         constraints = [
             models.UniqueConstraint(fields=["task", "combine_date"],
                 name="unique_task_date",
