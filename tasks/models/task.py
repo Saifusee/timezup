@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 
 
 class Task(models.Model):
-    task = models.TextField(max_length=500)
+    task = models.CharField(max_length=255)
     combine_date = models.ForeignKey(CombineDate, on_delete=models.PROTECT, null=False)
     slug = models.SlugField(max_length=50, null=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.PROTECT, 

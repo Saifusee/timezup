@@ -21,6 +21,6 @@ class TaskForm(forms.ModelForm):
         error_messages = {
             "task": {
                 "required": "Task Field is mandatory",
-                "max_length": "Maximum 500 characters allowed"
+                "max_length": "Maximum 255 characters allowed"
             }
         }

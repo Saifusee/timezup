@@ -4,7 +4,8 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from .mail import TaskMail
 from django.db.models import Q
-from .models import Year, Month, Date
+from django.contrib.auth import get_user_model
+from .models import Year, Month, Date, CombineDate
 import hashlib
 import threading
 import datetime
@@ -170,3 +171,35 @@ to verify your email address and follow further instructioins"
         "from_email": f"{settings.PROJECT_APPLICATION_NAME} <noreply@gmail.com>",
         "to": (user.email,), "is_html": True, "html_message": message_html_format})
     mail_thread.start()
+
+
+# Send reminder mails to user
+def send_reminder_mail(subject_greet, small_message):
+    # Getting today's date in integer
+    todays_date = datetime.datetime.now()
+    date = Date.objects.get(data=int(todays_date.day))
+    month = Month.objects.get(pk=int(todays_date.month))
+    year = Year.objects.get(data=int(todays_date.year))
+    # CombineDate object of today's date
+    combine_date, _ = CombineDate.objects.get_or_create(date=date, month=month, year=year)
+
+    from_email = f"{settings.PROJECT_APPLICATION_NAME} <noreply@gmail.com>"
+    subject = f"{settings.PROJECT_APPLICATION_NAME} - Today's Time Table"
+
+    # In my opinion select_related for forward relationship and for reverse use prefetch_related
+    users = get_user_model().objects.filter(is_active=True).prefetch_related("task_set")
+
+    for user in users:
+        context = {
+            "app_name": settings.PROJECT_APPLICATION_NAME,
+            "subject_greet": subject_greet,
+            "username": user.username,
+            "small_message": small_message,
+            "tasks": user.task_set.filter(combine_date=combine_date)
+        }
+        html_message = render_to_string("tasks/mail/reminder_mail.html", context)
+        mail_thread = threading.Thread(target=TaskMail, 
+            kwargs={"subject": subject,
+            "from_email": from_email,
+            "to": (user.email,), "is_html": True, "html_message": html_message})
+        mail_thread.start()
