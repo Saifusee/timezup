@@ -128,6 +128,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Django automatic look for static folder in all apps and STATICFILES_DIRS but STATIC _ROOT
+# we gave centralized location for whole project bcz server needed all static in one place
+# all we had to do run 'python manage.py collectstatic' and django transfer all static here
+STATIC_ROOT = BASE_DIR / 'collected_static'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
