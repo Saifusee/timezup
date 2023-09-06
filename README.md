@@ -6,15 +6,16 @@
 
 Welcome to Timezup, your ultimate time management solution. This feature-packed web application helps you organize your day-to-day activities, maintain a well-structured timetable, and ensures you stay on top of your commitments with ease.
 
+## Try it Now!
+
+Experience the power of Timezup by visiting our live website: [Timezup Live Demo](http://saifusee.pythonanywhere.com)
+
 ## Features at a Glance
 
 - 📅 **Effortless Task Management:** Seamlessly create, organize, and track tasks for any date on your calendar.
 - 📧 **Daily Email Updates:** Receive convenient daily email summaries of your scheduled tasks, helping you stay informed and in control.
 - 🎨 **Sleek and User-Friendly Interface:** Enjoy an intuitive and visually pleasing design that makes managing your time a breeze.
 
-## Try it Now!
-
-Experience the power of Timezup by visiting our live website: [Timezup Live Demo](http://saifusee.pythonanywhere.com)
 
 ## Technologies and Tools
 
