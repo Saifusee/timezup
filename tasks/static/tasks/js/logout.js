@@ -1,5 +1,6 @@
 // Getting logout element
 const logoutButton = document.getElementById("profile_logout");
+const adminButton = document.getElementById("profile_admin");
 const showButton = document.getElementsByClassName("show_button")[0];
 const profileContent = document.getElementsByClassName("profile_content")[0];
 const profileUsername = document.getElementsByClassName("profile_username")[0];
@@ -22,4 +23,8 @@ showButton.addEventListener("click", function(event){
 profileUsername.addEventListener("click", function(event){
     showButton.style.display = "inline"
     profileContent.style.display = "none"
+})
+
+adminButton.addEventListener("click", function(event) {
+    window.location.href = "/admin"
 })

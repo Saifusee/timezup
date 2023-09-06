@@ -22,6 +22,7 @@
                     <form class="logout_form" method="POST" action="{% url 'tasks:url-logout' %}">
                         {% csrf_token %}
                         <button id="profile_logout" type="button">Logout</button>
+                        {% if is_staff %}<button id="profile_admin" type="button">Admin Panel</button>{% endif %}
                     </form>
                 </span>
             </div>

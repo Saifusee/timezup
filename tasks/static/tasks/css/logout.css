@@ -11,11 +11,15 @@ body .profile {
     padding: 10px 0px 5px 10px;
 }
 
-#profile_logout {
+#profile_logout, #profile_admin {
     background-color: #ff9999;
     border-radius: 10px;
     font-size: 12px;
     padding: 10px;
+}
+
+#profile_admin {
+    background-color: #7ecfe7;
 }
 
 .show_button {

@@ -36,7 +36,9 @@ def viewIndex(request, year=None):
         'year': year,
         'months_data': months_data,
         'app_name': settings.PROJECT_APPLICATION_NAME,
-        'username': request.user.username
+        'username': request.user.username,
+        'is_staff': request.user.is_staff
+
     }
     return render(request, 'tasks/index.html', context)
 
@@ -47,7 +49,8 @@ def viewSelectYear(request):
     context = {
         'current_year': current_year,
         'app_name': settings.PROJECT_APPLICATION_NAME,
-        'username': request.user.username
+        'username': request.user.username,
+        'is_staff': request.user.is_staff
     }
     return render(request, 'tasks/years.html', context)
 
@@ -64,7 +67,8 @@ def viewShowMonthDates(request, year, month):
         'year': year,
         'month_name': month["name"],
         'end_date': end,
-        'username': request.user.username
+        'username': request.user.username,
+        'is_staff': request.user.is_staff
     }
     return render(request, 'tasks/month_dates.html', context)
 
@@ -88,7 +92,8 @@ def viewShowDateData(request, year, month, date):
         'month': month["name"],
         'date': date,
         'tasks': tasks,
-        'username': request.user.username
+        'username': request.user.username,
+        'is_staff': request.user.is_staff
     }
 
     return render(request, 'tasks/dates.html', context)
@@ -120,6 +125,7 @@ class ViewCreateTask(CreateView):
         context["year"] = self.kwargs["year"]
         context["app_name"] = settings.PROJECT_APPLICATION_NAME
         context["username"] = self.request.user.username
+        context["is_staff"] = self.request.user.is_staff
         context["title"] = "Create Task"
         context["messages"] = self.success_mssg_
         context["show_message"] = False
@@ -195,6 +201,7 @@ class ViewEditTask(UpdateView):
         context["year"] = combined_date.year.data
         context["app_name"] = settings.PROJECT_APPLICATION_NAME
         context["username"] = self.request.user.username
+        context["is_staff"] = self.request.user.is_staff
         context["title"] = "Edit Task"
         context["messages"] = self.success_mssg_
         context["show_message"] = False
