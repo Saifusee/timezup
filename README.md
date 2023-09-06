@@ -9,6 +9,8 @@ Welcome to Timezup, your ultimate time management solution. This feature-packed 
 ## Try it Now!
 
 Experience the power of Timezup by visiting our live website: [Timezup Live Demo](http://saifusee.pythonanywhere.com)
+Username: dummyuser
+Password: dummyuser@Password123 (limited access)
 
 ## Features at a Glance
 

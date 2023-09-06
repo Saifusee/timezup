@@ -14,4 +14,4 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ["email"]
 
     class Meta(AbstractBaseUser.Meta):
-        verbose_name = "Users"
+        verbose_name = "User"
